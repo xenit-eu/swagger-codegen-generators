@@ -282,11 +282,11 @@
     <distributionManagement>
         <repository>
             <id>xenit-private</id>
-            <url>https://repo.xenit.eu/K8TBkpYRAtTc9flA/private/maven/</url>
+            <url>https://maven.cloudsmith.io/xenit/private/</url>
         </repository>
         <snapshotRepository>
             <id>xenit-private-snapshot</id>
-            <url>https://repo.xenit.eu/K8TBkpYRAtTc9flA/private/maven/</url>
+            <url>https://maven.cloudsmith.io/xenit/private/</url>
         </snapshotRepository>
     </distributionManagement>
 
