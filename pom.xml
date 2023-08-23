@@ -285,7 +285,7 @@
             <url>https://maven.cloudsmith.io/xenit/private/</url>
         </repository>
         <snapshotRepository>
-            <id>xenit-private-snapshot</id>
+            <id>xenit-private</id>
             <url>https://maven.cloudsmith.io/xenit/private/</url>
         </snapshotRepository>
     </distributionManagement>
