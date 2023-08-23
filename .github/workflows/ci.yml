@@ -15,8 +15,8 @@ jobs:
           java-version: 18
           distribution: temurin
           server-id: xenit-private
-          server-username: ${{ secrets.CLOUDSMITH_USER }}
-          server-password: ${{ secrets.CLOUDSMITH_APIKEY }}
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
       - name: Build jar
         run: mvn -f pom.xml package
       - name: Publish test reports
