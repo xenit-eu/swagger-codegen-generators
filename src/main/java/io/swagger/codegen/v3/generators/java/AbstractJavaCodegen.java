@@ -226,7 +226,7 @@ public abstract class AbstractJavaCodegen extends DefaultCodegenConfig {
         apiDocTemplateFiles.put("api_doc.mustache", ".md");
 
         if (additionalProperties.containsKey(SUPPORT_JAVA6)) {
-            this.setSupportJava6(false); // JAVA 6 not supported
+            this.setSupportJava6(Boolean.valueOf(additionalProperties.get(SUPPORT_JAVA6).toString())); // JAVA 6 not supported
         }
         additionalProperties.put(SUPPORT_JAVA6, supportJava6);
 
