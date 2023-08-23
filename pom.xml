@@ -279,4 +279,12 @@
 
     </properties>
 
+    <distributionManagement>
+        <repository>
+            <id>xenit-private</id>
+            <name>xenit-private</name>
+            <url>https://repo.xenit.eu/K8TBkpYRAtTc9flA/private/maven/</url>
+        </repository>
+    </distributionManagement>
+
 </project>

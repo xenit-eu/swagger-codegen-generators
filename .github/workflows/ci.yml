@@ -1,0 +1,32 @@
+name: CI
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  buildAndPublish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          java_version: 18
+          distribution: temurin
+          server-id: xenit-private
+          server-username: ${{ secrets.CLOUDSMITH_USER }}
+          server-password: ${{ secrets.CLOUDSMITH_APIKEY }}
+      - name: Build jar
+        run: mvn -f pom.xml package
+      - name: Publish test reports
+        uses: mikepenz/action-junit-report@v3.7.6
+        if: success() || failure()
+        with:
+          report_paths: '**/target/surefire-reports/junitreports/TEST-*.xml'
+      - name: Publish jar to CS
+        env:
+          # doubling up on providing credentials seems to be required (https://docs.github.com/en/actions/publishing-packages/publishing-java-packages-with-maven)
+          MAVEN_USERNAME: ${{ secrets.CLOUDSMITH_USER }}
+          MAVEN_PASSWORD: ${{ secrets.CLOUDSMITH_APIKEY }}
+        run: mvn -f pom.xml deploy
