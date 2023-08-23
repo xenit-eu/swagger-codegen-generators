@@ -282,9 +282,12 @@
     <distributionManagement>
         <repository>
             <id>xenit-private</id>
-            <name>xenit-private</name>
             <url>https://repo.xenit.eu/K8TBkpYRAtTc9flA/private/maven/</url>
         </repository>
+        <snapshotRepository>
+            <id>xenit-private-snapshot</id>
+            <url>https://repo.xenit.eu/K8TBkpYRAtTc9flA/private/maven/</url>
+        </snapshotRepository>
     </distributionManagement>
 
 </project>
