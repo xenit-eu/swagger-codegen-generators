@@ -257,7 +257,7 @@
         <swagger-codegen-version>3.0.34</swagger-codegen-version>
         <swagger-parser-version>2.0.30</swagger-parser-version>
         <swagger-core-version>2.1.13</swagger-core-version>
-        <jackson-version>2.13.2</jackson-version>
+        <jackson-version>2.18.11</jackson-version>
         <!--
           jackson-databind 2.13.2 is still affected by CVE-2020-36518.
           This version pin for jackson-databind can be removed when bumping jackson to 2.14
